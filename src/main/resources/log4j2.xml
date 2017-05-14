@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="log-path">packet_post_process/log</Property>
+	</Properties>
+
+	<Appenders>
+		<RollingFile name="file-log" fileName="${log-path}/application-log.log"
+			filePattern="${log-path}/%d{yyyy}/%d{MMM}/%d{dd}/application-log-%i.log.gz">
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm} (%t) %c  %msg%n </pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+				<SizeBasedTriggeringPolicy size="100MB" />
+			</Policies>
+		</RollingFile>
+		<RollingFile name="error-log" fileName="${log-path}/application-error-log.log"
+			filePattern="${log-path}/error/%d{yyyy}/%d{MMM}/%d{dd}/application-log-%i.log.gz">
+			<PatternLayout>
+				<pattern>[%-5level] %d{yyyy-MM-dd HH:mm} (%t) %c  %msg%n </pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+				<SizeBasedTriggeringPolicy size="100MB" />
+			</Policies>
+		</RollingFile>
+
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%-5level]%d{yyyy-MM-dd HH:mm:ss} (%t) %c %msg%n " />
+		</Console>
+	</Appenders>
+	<Loggers>
+
+		
+		
+		<logger name="com.trinity" level="INFO" additivity="true">
+			<appender-ref ref="file-log" />
+			<appender-ref ref="console" />
+		</logger>
+		<logger name="com.trinity" level="ERROR" additivity="false">
+			<appender-ref ref="error-log" />
+			<appender-ref ref="console" />
+		</logger>
+		<Root level="INFO" additivity="true">
+			<appender-ref ref="file-log" />
+			<appender-ref ref="console" />
+		</Root>
+	</Loggers>
+</Configuration>
+
