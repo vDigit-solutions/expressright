@@ -5,6 +5,7 @@ import java.util.concurrent.Future;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,9 @@ import net.bramp.ffmpeg.probe.FFmpegProbeResult;
 public class ThumbnailServiceImpl implements ThumbnailService {
 
 	private final static Logger logger = LogManager.getLogger(ThumbnailServiceImpl.class);
+
+	@Value("${thumbnail.generator.file}")
+	private String thumbnailGeneratorFile;
 	@Autowired
 	FFprobe ffprobe;
 
@@ -32,8 +36,8 @@ public class ThumbnailServiceImpl implements ThumbnailService {
 			// ClassPathResource("thumbnail.bat");
 			// logger.info(resource.getPath());
 			// logger.info(resource.getFile().getAbsolutePath());
-			final ProcessBuilder ThumbnailProcessBuilder = new ProcessBuilder("thumbnail.sh", videoFileabsolutePath,
-					ThumbnailabsolutePath, String.valueOf(durationLong / 3));
+			final ProcessBuilder ThumbnailProcessBuilder = new ProcessBuilder(thumbnailGeneratorFile,
+					videoFileabsolutePath, ThumbnailabsolutePath, String.valueOf(durationLong / 3));
 			final Process ThumbnailProcess = ThumbnailProcessBuilder.start();
 			ThumbnailProcess.waitFor();
 
