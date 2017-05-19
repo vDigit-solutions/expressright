@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.express.service.registration.RegistrationService;
+import com.express.vo.bean.ForgotBean;
 import com.express.vo.bean.RegistrationBean;
 
 @RestController
@@ -74,12 +75,12 @@ public class RegistrationController {
 	}
 
 	@RequestMapping("forgotPassword")
-	public Map<String, Object> forgotPassword(@RequestParam String email_id,
+	public Map<String, Object> forgotPassword(@Valid @RequestBody ForgotBean forgotBean, BindingResult bindingResult,
 			@RequestParam(required = false, defaultValue = "3") Integer apptype,
 			@RequestParam(required = false, defaultValue = "2") Integer reg_from) {
 		Map<String, Object> result = null;
 		try {
-			result = registrationService.forgotPassword(email_id, apptype, reg_from);
+			result = registrationService.forgotPassword(forgotBean.getEmail(), apptype, reg_from);
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);
 			result.put("error 500", "service error");
