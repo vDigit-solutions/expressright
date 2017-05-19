@@ -1,5 +1,6 @@
 package com.express.dao.registration;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -76,8 +77,11 @@ public class RegistrationDaoImpl extends JdbcDaoSupport implements RegistrationD
 		Random random = new Random(9999);
 		String input = email_id.substring(0, email_id.indexOf("@")) + random.nextLong();
 		String newPass = passwordEncryptionService.encrypt(input);
-		getJdbcTemplate().update("UPDATE user_registration set user_password = ? where user_email = ?", newPass,
-				email_id);
+		int updated = getJdbcTemplate().update("UPDATE user_registration set user_password = ? where user_email = ?",
+				newPass, email_id);
+		if (updated == 0) {
+			return Collections.emptyMap();
+		}
 		Map<String, Object> result = null;
 		result = getJdbcTemplate().queryForMap("SELECT user_name FROM user_registration WHERE user_email = ?",
 				email_id);

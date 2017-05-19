@@ -10,49 +10,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+
 @Service
-public class EmailSenderImpl implements EmailSender,InitializingBean{
-	
+public class EmailSenderImpl implements EmailSender, InitializingBean {
+
 	@Autowired
 	JavaMailSender mailSender;
-	
-	
-	
+
 	Logger logger = LogManager.getLogger(EmailSenderImpl.class);
-	
-	public void sendEmail(String toEmailIds,String subject, Object... data){
+
+	public void sendEmail(String toEmailIds, String subject, Object... data) {
 		try {
-			
-			try {   
-				final InternetAddress[] toemailAddresss = InternetAddress.parse(toEmailIds);
-				
-				String message = String.format(mailMessageFormat, data);
-				MimeMessage mailMessage = mailSender.createMimeMessage();logger.info("sendEmail  ------- :: "+toEmailIds+"  subject ::"+subject +" message --: "+message);
-				
-				String from = mailMessage.getSession().getProperty("mail.smtp.from");
-				logger.info("Sender info  :: "+from);
-				
-				MimeMessageHelper messageHelper = new MimeMessageHelper(mailMessage , true);
-				messageHelper.setTo(toemailAddresss);
-				messageHelper.setSubject(subject);
-				messageHelper.setText(message,true);
-				messageHelper.setFrom(from, from);
-				
-				mailSender.send(mailMessage);
-			} catch (Exception e) {
-				logger.error("error while sending email", e );
-			}
+			final InternetAddress[] toemailAddresss = InternetAddress.parse(toEmailIds);
+
+			String message = String.format(mailMessageFormat, data);
+			MimeMessage mailMessage = mailSender.createMimeMessage();
+			logger.info("sendEmail  ------- :: " + toEmailIds + "  subject ::" + subject + " message --: " + message);
+
+			String from = mailMessage.getSession().getProperty("mail.smtp.from");
+			logger.info("Sender info  :: " + from);
+
+			MimeMessageHelper messageHelper = new MimeMessageHelper(mailMessage, true);
+			messageHelper.setTo(toemailAddresss);
+			messageHelper.setSubject(subject);
+			messageHelper.setText(message, true);
+			messageHelper.setFrom(from, from);
+
+			mailSender.send(mailMessage);
 		} catch (Exception e) {
-			logger.error(e.getMessage() , e );
+			logger.error("error while sending email", e);
 		}
-		
-		
 	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		sendEmail("manslogic@gmail.com", "hi", "nagesh" , "hi");
-		
+		sendEmail("manslogic@gmail.com", "hi", "nagesh", "hi");
+
 	}
 
 }
