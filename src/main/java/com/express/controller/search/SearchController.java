@@ -15,20 +15,18 @@ import com.express.service.search.VideoSearchService;
 @RequestMapping("search")
 @CrossOrigin
 public class SearchController {
-	
+
 	@Autowired
 	private VideoSearchService searchService;
-	
+
 	@RequestMapping
-	public Collection<Map<String, Object>> searchVideos(
-			@RequestParam(required = false , defaultValue="") String query ,
-			@RequestParam(required = false , defaultValue="-1") Long theme ,
-			@RequestParam(required = false , defaultValue="0") Integer pageNo ,
-			@RequestParam(required = false , defaultValue="8") Integer pageSize 
-			){
+	public Collection<Map<String, Object>> searchVideos(@RequestParam(required = false, defaultValue = "") String query,
+			@RequestParam(required = false, defaultValue = "-1") Long theme,
+			@RequestParam(required = false, defaultValue = "1") Integer pageNo,
+			@RequestParam(required = false, defaultValue = "8") Integer pageSize) {
 		Collection<Map<String, Object>> result = null;
-		result = searchService.searchVideos(query , theme , pageNo , pageSize);
+		result = searchService.searchVideos(query, theme, pageNo, pageSize);
 		return result;
 	}
-	
+
 }

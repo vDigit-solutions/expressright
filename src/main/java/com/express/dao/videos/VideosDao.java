@@ -36,4 +36,6 @@ public interface VideosDao {
 	
 	public void playBackStarted(Long video_id, Long user_session_id, Integer apptype, Integer device_type);
 
+	void like(Long video_id, Long user_session_id, Integer apptype, Integer device_type);
+
 }

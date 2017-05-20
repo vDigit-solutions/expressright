@@ -165,13 +165,24 @@ public class VideosDaoImpl extends JdbcDaoSupport implements VideosDao {
 	@Override
 	public void playBackStarted(Long video_id, Long user_session_id, Integer apptype, Integer device_type) {
 		JdbcTemplate jt = getJdbcTemplate();
+		jt.update("UPDATE ov SET ov.view_count = ov.view_count+1 FROM online_video ov WHERE ov.video_id = ?", video_id);
+
+		if (user_session_id == null) {
+			return;
+		}
 
 		Long user_id = jt.queryForObject("SELECT user_id FROM user_login_history WHERE id = ? ",
 				new Object[] { user_session_id }, Long.class);
-		jt.update("UPDATE ov SET ov.view_count = ov.view_count+1 FROM online_video ov WHERE ov.video_id = ?", video_id);
 		jt.update(
 				"INSERT INTO history_viewed_log(video_id , user_id , app_type , view_datetime) values( ? , ? , ? , ?)",
 				new Object[] { video_id, user_id, apptype, new Date() });
 
+	}
+
+	@Override
+	public void like(Long video_id, Long user_session_id, Integer apptype, Integer device_type) {
+		JdbcTemplate jt = getJdbcTemplate();
+		jt.update("UPDATE ov SET ov.like_count = ov.like_count + 1 FROM online_video ov WHERE ov.video_id = ?",
+				video_id);
 	}
 }

@@ -89,6 +89,15 @@ public class VideosController {
 		return null;
 	}
 
+	@RequestMapping("like")
+	public Collection<Map<String, Object>> like(@RequestParam Long video_id, @RequestParam Long user_session_id,
+			@RequestParam(required = false, defaultValue = "3") Integer apptype,
+			@RequestParam(required = false, defaultValue = "2") Integer device_type) {
+		logger.info("video like " + video_id);
+		videosService.like(video_id, user_session_id, apptype, device_type);
+		return null;
+	}
+
 	@RequestMapping("deleteVideos")
 	public Map<String, Object> deleteVideos(@RequestParam("video_ids[]") Long[] video_ids,
 			@RequestParam Long user_session_id) {

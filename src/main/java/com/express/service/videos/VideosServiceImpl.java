@@ -106,4 +106,9 @@ public class VideosServiceImpl implements VideosService {
 		videosDao.playBackStarted(video_id, user_session_id, apptype, device_type);
 	}
 
+	@Override
+	public void like(Long video_id, Long user_session_id, Integer apptype, Integer device_type) {
+		videosDao.like(video_id, user_session_id, apptype, device_type);
+	}
+
 }
