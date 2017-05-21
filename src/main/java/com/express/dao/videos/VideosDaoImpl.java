@@ -185,4 +185,18 @@ public class VideosDaoImpl extends JdbcDaoSupport implements VideosDao {
 		jt.update("UPDATE ov SET ov.like_count = ov.like_count + 1 FROM online_video ov WHERE ov.video_id = ?",
 				video_id);
 	}
+
+	@Override
+	public Collection<Map<String, Object>> getVideosbyVideoIds(List<Long> videoIds) {
+		Collection<Map<String, Object>> result = null;
+
+		StringBuilder builder = new StringBuilder();
+		for (Long videoId : videoIds) {
+			builder.append(",").append(" ?");
+		}
+		String in_cluse = builder.toString().replaceFirst(",", "");
+		result = getJdbcTemplate().queryForList("SELECT * FROM v_online_videos WHERE video_id IN (" + in_cluse + ")",
+				videoIds.toArray());
+		return result;
+	}
 }
