@@ -66,6 +66,7 @@ public class RegistrationServiecImpl implements RegistrationService {
 			return user;
 		}
 		emailSender.sendEmail(email_id, "Forgot Password", user.get("user_name"), user.get("user_password"));
+		user.put("success", "success");
 		return user;
 	}
 

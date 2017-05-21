@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import com.express.dao.videos.VideosDao;
 import com.express.service.history.dao.HistoryDao;
@@ -27,7 +28,19 @@ public class HistoryServiceImpl implements HistoryService {
 		}
 		List<Long> videoIds = historyDao.loadHistory(user_session_id, apptype);
 
-		return videosDao.getVideosbyVideoIds(videoIds);
+		if (CollectionUtils.isEmpty(videoIds)) {
+			return null;
+		}
+
+		int startIndex = (pageNo - 1) * pageSize;
+
+		int toIndex = startIndex + pageSize;
+
+		if (toIndex > videoIds.size()) {
+			toIndex = videoIds.size();
+		}
+
+		return videosDao.getVideosbyVideoIds(videoIds.subList(startIndex, toIndex));
 	}
 
 }
