@@ -77,6 +77,7 @@ public class VideosDaoImpl extends JdbcDaoSupport implements VideosDao {
 
 		result = getJdbcTemplate().query("SELECT * FROM v_online_videos_by_theme WHERE theme_type = ? ",
 				new Object[] { theme_id }, new ColumnMapRowMapper());
+		System.out.println(result);
 		return result;
 	}
 
