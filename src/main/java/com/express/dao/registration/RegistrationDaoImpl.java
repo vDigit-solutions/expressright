@@ -83,16 +83,22 @@ public class RegistrationDaoImpl extends JdbcDaoSupport implements RegistrationD
 			return Collections.emptyMap();
 		}
 		Map<String, Object> result = null;
-		result = getJdbcTemplate().queryForMap("SELECT user_name FROM user_registration WHERE user_email = ?",
+		result = getJdbcTemplate().queryForMap("SELECT user_name as name FROM user_registration WHERE user_email = ?",
 				email_id);
-		result.put("user_password", input);
 		return result;
 	}
 
 	@Override
-	public void updateProfile(ProfileBean profileBean, Integer apptype, Integer device_type) {
-		getJdbcTemplate().update("UPDATE user_registration SET user_password = ? WHERE user_email = ?",
-				profileBean.getNewpassword(), profileBean.getEmail());
-
+	public Map<String, Object> updateProfile(ProfileBean profileBean, Integer apptype, Integer device_type) {
+		Long userId = getJdbcTemplate().queryForObject("SELECT user_id FROM user_login_history WHERE id = ?",
+				Long.class, profileBean.getProfile_id());
+		getJdbcTemplate().update(
+				"UPDATE user_registration SET user_password = ?, user_name = ?, user_email = ? WHERE user_id = ?",
+				profileBean.getNewpassword(), profileBean.getFull_name(), profileBean.getEmail(), userId);
+		Map<String, Object> result = null;
+		result = getJdbcTemplate().queryForMap("SELECT user_name as name FROM user_registration WHERE user_email = ?",
+				profileBean.getEmail());
+		result.put("success", "success");
+		return result;
 	}
 }

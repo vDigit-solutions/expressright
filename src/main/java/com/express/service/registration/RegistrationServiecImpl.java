@@ -76,7 +76,7 @@ public class RegistrationServiecImpl implements RegistrationService {
 		Map<String, Object> result = new HashMap<>();
 		if (profileBean.getNewpassword().equals(profileBean.getPassword_confirmation())) {
 			if (bindingResult.getErrorCount() == 0) {
-				registrationDao.updateProfile(profileBean, apptype, device_type);
+				result = registrationDao.updateProfile(profileBean, apptype, device_type);
 			} else {
 				result.put("error_count", bindingResult.getErrorCount());
 				result.put("error", bindingResult.getAllErrors());
@@ -85,6 +85,6 @@ public class RegistrationServiecImpl implements RegistrationService {
 			result.put("error_count", 1);
 			result.put("error", Arrays.asList(new String[] { "Confirm password is not same as new password" }));
 		}
-		return null;
+		return result;
 	}
 }

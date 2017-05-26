@@ -9,12 +9,11 @@ public interface RegistrationDao {
 
 	Boolean userNameCheckAvailability(String username);
 
-	Map<String, Object> registerUser(RegistrationBean registrationBean, Integer apptype, Integer reg_from, Boolean login);
+	Map<String, Object> registerUser(RegistrationBean registrationBean, Integer apptype, Integer reg_from,
+			Boolean login);
 
-	Map<String, Object> forgotPassword(String email_id, Integer apptype,
-			Integer reg_from);
+	Map<String, Object> forgotPassword(String email_id, Integer apptype, Integer reg_from);
 
-	void updateProfile(ProfileBean profileBean, Integer apptype,
-			Integer device_type);
+	Map<String, Object> updateProfile(ProfileBean profileBean, Integer apptype, Integer device_type);
 
 }
