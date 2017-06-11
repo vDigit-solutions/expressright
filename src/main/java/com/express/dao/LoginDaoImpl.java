@@ -70,10 +70,12 @@ public class LoginDaoImpl extends JdbcDaoSupport implements LoginDao {
 			result.put("message", message);
 			result.put("name", name);
 			result.put(SessionManager.USER_SESSION_ID, session_id);
+			result.put("email", username);
 			if (request != null) {
 				HttpSession session = request.getSession(true);
 				session.setAttribute(SessionManager.USER_SESSION_ID, session_id);
 				session.setAttribute(SessionManager.USER_NAME, username);
+				session.setAttribute("email", username);
 			}
 
 			break;
