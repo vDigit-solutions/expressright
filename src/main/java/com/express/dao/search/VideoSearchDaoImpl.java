@@ -18,7 +18,7 @@ public class VideoSearchDaoImpl extends JdbcDaoSupport implements VideoSearchDao
 	String queryVideosByTheme = "SELECT * FROM ( SELECT ROW_NUMBER() OVER( ORDER BY video_id ) as slNo,video_id ,video_name , file_mime_type , theme_type , video_description , video_duration , video_uploaded_time , file_url , thumbnail_url , user_name , theme_id , theme_name, view_count FROM v_online_videos ov JOIN index_themes it ON it.theme_id = ov.theme_type WHERE AND theme_id = ? ) AS tbl WHERE slNo BETWEEN ? AND ? ";
 	String queryVideosSearch = "SELECT * FROM ( SELECT ROW_NUMBER() OVER( ORDER BY video_id ) as slNo,video_id ,video_name , file_mime_type , theme_type , video_description , video_duration , video_uploaded_time , file_url , thumbnail_url , user_name , theme_id , theme_name, view_count FROM v_online_videos ov JOIN index_themes it ON it.theme_id = ov.theme_type WHERE ( video_name LIKE ? OR video_description LIKE ? ) AND theme_id = ? ) AS tbl WHERE slNo BETWEEN ? AND ? ";
 	String queryTheme = " SELECT DISTINCT theme_id , theme_name FROM v_online_videos ov JOIN index_themes it ON it.theme_id = ov.theme_type WHERE ( video_name LIKE ? OR video_description LIKE ? ) ";
-	String queryIndexTheme = " SELECT theme_id , theme_name index_theme ";
+	String queryIndexTheme = " SELECT theme_id , theme_name index_themes ORDER BY theme_name ASC ";
 	String queryWithoutTheme = " SELECT * FROM v_online_videos ov JOIN index_themes it ON it.theme_id = ov.theme_type WHERE video_name LIKE ? OR video_description LIKE ?  ";
 
 	@Autowired
