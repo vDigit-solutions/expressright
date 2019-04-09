@@ -59,12 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           </button>
           
           <a class="navbar-brand" href="#include/home.jsp"> <img src="images/appimage/LogoExpressRight.png"  alt="" style="height: 55px; margin-top: -11px;";/> </a>
-		  
- 		<!-- <div class="collapse navbar-collapse pull-left" id="bs-example-navbar-collapse-1" >
-                            <ul class="nav navbar-nav">
-                                <li class="active" ><button class="navbar-toggle collapse in" data-toggle="collapse" id="menu-toggle-2"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span></button></li>
-                            </ul>
-                </div> --><!-- bs-example-navbar-collapse-1 -->      
+		   
         </div> 
         <div id="navbar" class="navbar-collapse collapse">
 			<div class="top-search">
@@ -90,18 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</form>
 			</div>
-			<!-- <div class="header-top-right">
-				<div class="file">
-					<a href="upload.jsp">Upload</a>
-				</div>
-				<div class="signin">
-					<a href="#" class="play-icon popup-with-zoom-anim">My Profile</a>
-				</div>
-				<div class="signin">
-					<a href="home.jsp" class="play-icon popup-with-zoom-anim">Logout</a>
-				</div>
-				<div class="clearfix"> </div>
-			</div> -->
+			
 			<div class="header-top-right">
 				  <div class="file">
 					<a href="#small-dialog111" class="play-icon popup-with-zoom-anim">Upload</a>
@@ -112,31 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 									<script type="text/javascript" src="js/modernizr.custom.min.js"></script>    
 									<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-									<!--//pop-up-box -->
-									<!-- <div id="small-dialog2" class="mfp-hide">
-										<h3>Create Account</h3> 
-										<div class="social-sits">
-											<div class="facebook-button">
-												<a href="#">Connect with Facebook</a>
-											</div>
-											<div class="chrome-button">
-												<a href="#">Connect with Google</a>
-											</div>
-											<div class="button-bottom">
-												<p>Already have an account? <a href="#small-dialog" class="play-icon popup-with-zoom-anim">Login</a></p>
-											</div>
-										</div>
-										<div class="signup">
-											<form>
-												<input type="text" class="email" placeholder="Mobile Number" maxlength="10" pattern="[1-9]{1}\d{9}" title="Enter a valid mobile number" />
-												
-											</form>
-											<div class="continue-button">
-												<a href="#small-dialog3" class="hvr-shutter-out-horizontal play-icon popup-with-zoom-anim">CONTINUE</a>
-											</div>
-										</div>
-										<div class="clearfix"> </div>
-									</div> -->	
+										
 									<div id="small-dialog3" class="mfp-hide">
 										<h3>Create Account</h3> 
 										<div class="social-sits">
@@ -217,56 +177,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 										<div class="clearfix"> </div>
 									</div>		
-									<div id="small-dialog4" class="mfp-hide">
-										<h3>Feedback</h3> 
-										<div class="feedback-grids">
-											<div class="feedback-grid">
-												<p>Suspendisse tristique magna ut urna pellentesque, ut egestas velit faucibus. Nullam mattis lectus ullamcorper dui dignissim, sit amet egestas orci ullamcorper.</p>
-											</div>
-											<div class="button-bottom">
-												<p><a href="#small-dialog" class="play-icon popup-with-zoom-anim">Sign in</a> to get started.</p>
-											</div>
-										</div>
-									</div>
-									<div id="small-dialog5" class="mfp-hide">
-										<h3>Help</h3> 
-											<div class="help-grid">
-												<p>Suspendisse tristique magna ut urna pellentesque, ut egestas velit faucibus. Nullam mattis lectus ullamcorper dui dignissim, sit amet egestas orci ullamcorper.</p>
-											</div>
-											<div class="help-grids">
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog4" class="play-icon popup-with-zoom-anim">Feedback</a></p>
-												</div>
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog6" class="play-icon popup-with-zoom-anim">Lorem ipsum dolor sit amet</a></p>
-												</div>
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog6" class="play-icon popup-with-zoom-anim">Nunc vitae rutrum enim</a></p>
-												</div>
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog6" class="play-icon popup-with-zoom-anim">Mauris at volutpat leo</a></p>
-												</div>
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog6" class="play-icon popup-with-zoom-anim">Mauris vehicula rutrum velit</a></p>
-												</div>
-												<div class="help-button-bottom">
-													<p><a href="#small-dialog6" class="play-icon popup-with-zoom-anim">Aliquam eget ante non orci fac</a></p>
-												</div>
-											</div>
-									</div>
-									<div id="small-dialog6" class="mfp-hide">
-										<div class="video-information-text">
-											<h4>Video information & settings</h4>
-											<p>Suspendisse tristique magna ut urna pellentesque, ut egestas velit faucibus. Nullam mattis lectus ullamcorper dui dignissim, sit amet egestas orci ullamcorper.</p>
-											<ol>
-												<li>Nunc vitae rutrum enim. Mauris at volutpat leo. Vivamus dapibus mi ut elit fermentum tincidunt.</li>
-												<li>Nunc vitae rutrum enim. Mauris at volutpat leo. Vivamus dapibus mi ut elit fermentum tincidunt.</li>
-												<li>Nunc vitae rutrum enim. Mauris at volutpat leo. Vivamus dapibus mi ut elit fermentum tincidunt.</li>
-												<li>Nunc vitae rutrum enim. Mauris at volutpat leo. Vivamus dapibus mi ut elit fermentum tincidunt.</li>
-												<li>Nunc vitae rutrum enim. Mauris at volutpat leo. Vivamus dapibus mi ut elit fermentum tincidunt.</li>
-											</ol>
-										</div>
-									</div>
+								
+									
 									<div id="small-dialog111" class="mfp-hide">
 										<h3>Upload</h3> 
 										<div class="feedback-grids">
@@ -358,12 +270,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
 		<div class="clearfix"> </div>
       </div>
-      <!-- <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li> 
-      <li><a href="#">Page 3</a></li> 
-    </ul> -->
+     
     	 
     </nav>
 	
@@ -374,18 +281,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  
                 <li class="active">
                     <a href="#include/home.jsp" ><span class="fa-stack fa-lg pull-left"><i class="glyphicon glyphicon-home "></i></span> Dashboard</a>
-                      <%--<ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                        <li><a href="#">link1</a></li>
-                        <li><a href="#">link2</a></li>
-                    </ul> --%>
+                    
+                </li>
+				<li>
+                    <!--<a href="#include/history.jsp" class="sub-icon" ><span class="fa-stack fa-lg pull-left"><i class="glyphicon glyphicon-home glyphicon-hourglass"></i></span> History</a>-->
                 </li>
                 <li>
-                    <!--<a href="#include/history.jsp" class="sub-icon" ><span class="fa-stack fa-lg pull-left"><i class="glyphicon glyphicon-home glyphicon-hourglass"></i></span> History</a>-->
-                    <%--<ul class="nav-pills nav-stacked" style="list-style-type:none;">
-                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link1</a></li>
-                        <li><a href="#"><span class="fa-stack fa-lg pull-left"><i class="fa fa-flag fa-stack-1x "></i></span>link2</a></li>
- 
-                    </ul> --%>
+                    <a href="#include/testimonials.jsp" class="sub-icon" ><span class="fa-stack fa-lg pull-left"><i class="glyphicon glyphicon-thumbs-up"></i></span>Testimonials</a>
+                    
                 </li>
                 <li>
                     <a href="#"><span class="fa-stack fa-lg pull-left"  style="margin: 0px 0em 0px -0.2em;"><i class="fa fa-cloud-download fa-stack-1x "></i></span>Themes<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
@@ -423,11 +326,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="container-fluid xyz">
                 <div class="row">
                     <div class="col-lg-12" id="content">
-                       <%--
-                       	<h1>Simple Sidebar With Bootstrap 3 by <a href="http://seegatesite.com/create-simple-cool-sidebar-menu-with-bootstrap-3/" >Seegatesite.com</a></h1>
-                        <p>This sidebar is adopted from start bootstrap simple sidebar startboostrap.com, which I modified slightly to be more cool. For tutorials and how to create it , you can read from my site here <a href="http://seegatesite.com/create-simple-cool-sidebar-menu-with-bootstrap-3/">create cool simple sidebar menu with boostrap 3</a></p>
-                       
-                        --%> 
+                      
                     </div>
                    
                 </div>
@@ -460,7 +359,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</div>
 						<div class="footer-bottom-nav">
 							<ul>
-								<li><p>©ExpressRight 2018</p></li>
+								<li><p>©ExpressRight 2019</p></li>
 								<li><a href="https://itunes.apple.com/us/app/express-right/id1223334039?ls=1&mt=8" target="_blank"><img alt="App Store" src="images/appimage/app-store.png"> <span class="appstore">App Store</span></a></li>
 								<!--<li><a href="#"><img alt="Play Store" src="images/appimage/play-store.png"> <span class="playstore">Play Store</span></a></li>-->
 								<li><img alt="Play Store" src="images/appimage/play-store.png"> <span class="playstore">Play Store</span></li>
@@ -468,7 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							 	<li><div class="side-bottom-icons" style="margin: 0px!important;">
 									<ul class="footer_social_links" >
 										<li class="animate zoomIn" data-anim-type="zoomIn">
-										<a href="https://www.facebook.com/expressright" target="_blank">
+										<a href="https://www.facebook.com/ExpressrightChamps/" target="_blank">
 										<i class="fa fa-facebook"></i>
 										</a>
 										</li>								
@@ -477,11 +376,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<i class="fa fa-twitter"></i>
 										</a>
 										</li>
-										<li class="animate zoomIn" data-anim-type="zoomIn">
+										<!--<li class="animate zoomIn" data-anim-type="zoomIn">
 										<a href="https://www.linkedin.com/in/express-right-858094140" target="_blank">
 										<i class="fa fa-linkedin"></i>
 										</a>
-										</li>
+										</li>-->
 									</ul>
 								</div></li> 
 							</ul>
@@ -502,13 +401,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		 
 		
 		<div class="clearfix"> </div>
-	<!-- <div class="drop-menu">
-		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu4">
-		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Regular link</a></li>
-		  <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled link</a></li>
-		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another link</a></li>
-		</ul>
-	</div> -->
+	
 	
     <!-- Bootstrap core JavaScript
     ================================================== -->

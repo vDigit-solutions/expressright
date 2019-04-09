@@ -1,12 +1,35 @@
 
 			<div class="main-grids">
 				<div class="top-grids">
+				
+						<div id="Photos" class="recommended-info">
+					
+							
+							<div style="width: 50%; float:left">
+							<h3>Gallery</h3>
+									<img src="images/photos/img_1.png" class="mySlides" alt="Cinque Terre" width="500" height="250">
+									<img src="images/photos/img_2.png" class="mySlides" alt="Cinque Terre" width="500" height="250">
+									<img src="images/photos/img_3.png" class="mySlides" alt="Cinque Terre" width="500" height="250">
+									<img src="images/photos/img_4.png" class="mySlides" alt="Cinque Terre" width="500" height="250">
+									<img src="images/photos/img_5.png" class="mySlides" alt="Cinque Terre" width="500" height="250">
+									<img src="images/photos/img_6.png" class="mySlides" alt="Cinque Terre" width="500" height="250">
+									<img src="images/photos/img_7.png" class="mySlides" alt="Cinque Terre" width="500" height="250">
+							</div>
+
+							<div style="width: 50%; float:right">
+							<h3>Events</h3>
+								<!--<iframe width="500" height="250" alt="Cinque Terre" src="https://www.youtube.com/embed/FTT4UnISJSY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+								<img src="images/photos/img_event.jpg" width="500" height="250">
+									
+							</div>
+									
+					
+						</div>		
+						<div class="clearfix"> </div>						
 					<div id="recentVideosOnly" class="recommended-info">
 						<h3>Recent Videos</h3>
 					</div>
 					
-					
-					<!-- <a class="callbacks_nav callbacks1_nav prev" href="#">Previous</a><a class="callbacks_nav callbacks1_nav next" href="#">Next</a> -->
 					<div class="clearfix"> </div>
 				</div>
 				
@@ -37,16 +60,14 @@
 				<div class="top-grids">
 					<div class="recommended-info theme_id_{theme_id} theme_name_{theme_name}">
 						<h3>{theme_name}</h3>
-					</div>
-					<!-- <a class="callbacks_nav callbacks1_nav prev" href="#">Previous</a><a class="callbacks_nav callbacks1_nav next" href="#">Next</a> -->
-					
+					</div
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 <script type="text/javascript">
 function recentVideos(){
 
-	$.getJSON(config.restserverUrl+"videos/recent?pageSize=25&pageNo=1",function(data){
+	$.getJSON(config.restserverUrl+"videos/recent?pageSize=10&pageNo=5",function(data){
 		$('.resent-grid','.top-grids').remove()
 		data.forEach(function(video){
 console.log(video)
@@ -78,4 +99,23 @@ function loadAllVideo(){
 	
 }
 $(loadAllVideo);
+
+
+var slideIndex = 0;
+photSlides();
+
+function photSlides() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(photSlides, 2000); 
+}
+
+
+
 </script>

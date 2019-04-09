@@ -38,15 +38,11 @@
     	<div class="col-md-4">
             <form >
             <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
-            <address>
+            <address class="contactUs">
             	<strong style="text-decoration: underline;">USA</strong><br><br>
-                <!--<strong style="text-decoration: underline;">ExpressRight Classes at</strong><br>
-                3720 Honey Locust dr,<br>
-                Naperville, IL 60564 <br><br>-->
-              
-                1952 McDowell Road,<br>
-				Suite - 108,<br>
-                Naperville, IL 60563 <br>
+                4255 Westbrook Dr,<br>
+				Unite#222,<br>
+                Aurora, IL - 60504 <br>
                
             </address>
             
